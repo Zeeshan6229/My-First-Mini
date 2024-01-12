@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %> 
+ 
+<body>
+  
+
+<div class="form">
+    
+  <form action="/submit" method="POST">
+    <div class="title">Login Page</div>
+    <div class="subtitle">Go Ahead With Your Login!</div><br>
+
+    <!-- <h1><b><%= message %></b></h1> -->
+    <% if (locals.message==="Enter Your Credentials Below. ") { %>
+      <h2 style="color: aquamarine;">Enter Your Credentials Below. </h2>
+      <% } else { %>
+        <h2 style="color:red"><%= message %> 👇</h2>
+        <% } %>
+
+    <div class="input-container ic1">
+      <input id="UserName" name="uName" class="input" type="text" placeholder="  " required/>
+      <div class="cut"></div>
+      <label for="Username" class="placeholder">User name</label>
+    </div>
+    <div class="input-container ic2">
+      <input id="Password" name="password"class="input" type="text" placeholder=" " required/>
+      <div class="cut"></div>
+      <label for="Password" class="placeholder">Password</label>
+    </div>
+    <button type="submit" value="OK" class="submit">Submit</button>
+    
+  </form>
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>
